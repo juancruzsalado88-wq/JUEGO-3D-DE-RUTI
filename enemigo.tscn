@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://booairdjj5o0k"]
+
+[ext_resource type="Script" uid="uid://cn63q1x4tuhmo" path="res://enemigo.gd" id="1_becj5"]
+[ext_resource type="AudioStream" uid="uid://cnwc5sm2j7kul" path="res://susto.wav" id="2_a5tj2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2jius"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3efq"]
+albedo_color = Color(0.3529412, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.16470589, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_becj5"]
+
+[node name="Enemigo" type="CharacterBody3D" unique_id=1862387877]
+script = ExtResource("1_becj5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1512060530]
+shape = SubResource("CapsuleShape3D_2jius")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2005932613]
+material_override = SubResource("StandardMaterial3D_s3efq")
+mesh = SubResource("CapsuleMesh_becj5")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=219412462]
+
+[node name="Susto" type="AudioStreamPlayer3D" parent="." unique_id=1856140334]
+stream = ExtResource("2_a5tj2")

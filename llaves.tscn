@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://j6cink5bx07r"]
+
+[ext_resource type="Script" uid="uid://3kcjm5em5lpl" path="res://llaves.gd" id="1_5k4y6"]
+[ext_resource type="AudioStream" uid="uid://c0utlvs04ia34" path="res://llave.wav" id="2_w07sp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2jius"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofcel"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[node name="Llave" type="Area3D" unique_id=1407304236]
+script = ExtResource("1_5k4y6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=366027824]
+mesh = SubResource("BoxMesh_2jius")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1601551585]
+shape = SubResource("BoxShape3D_ofcel")
+
+[node name="Sonido" type="AudioStreamPlayer" parent="." unique_id=1203875244]
+stream = ExtResource("2_w07sp")
